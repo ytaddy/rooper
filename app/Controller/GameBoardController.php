@@ -1,7 +1,7 @@
 <?php
 class GameBoardController extends AppController {
 
-	public $uses = array('GameBoard');
+	public $uses = array('GameBoard', 'Chessmen');
 
 	public function loop () {
 		$this->GameBoard->init(1);
