@@ -18,6 +18,6 @@ class Player extends AppModel {
 	}
 
 	public function updateCheckKey($player_id, $password) {
-		$this->save(array('Player' => array('player_id' => $player_id, 'check_key' => crypt($player_id . $password))));
+		$this->query("update ytaddy_rooper.player set check_key = '" . mysqli_real_escape_string(crypt($player_id . $password)) . "' where player_id = '$player_id'");
 	}
 }
