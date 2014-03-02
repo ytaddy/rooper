@@ -1,6 +1,5 @@
 <?php
 class Player extends AppModel {
-	public $uses = array('Sanitize');
 	public $useTable = 'player';
 	public $data;
 

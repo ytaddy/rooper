@@ -19,7 +19,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-App::uses('Model', 'Model');
+App::uses('Model', 'Model', 'Sanitize');
 
 /**
  * Application model for Cake.
