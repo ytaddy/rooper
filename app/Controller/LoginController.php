@@ -9,5 +9,6 @@ class LoginController extends AppController {
 		$res = $this->Player->checkPass($player_id, $password);
 
 		var_dump($player_id);var_dump($res);
+		$this->set('player_id', $player_id);
 	}
 }
