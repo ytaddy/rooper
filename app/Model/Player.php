@@ -18,6 +18,6 @@ class Player extends AppModel {
 	}
 
 	public function updateCheckKey($player_id, $password) {
-		$this->save(array('Player' => array('player_id' => $player_id, check_key' => crypt($player_id . $password))));
+		$this->save(array('Player' => array('player_id' => $player_id, 'check_key' => crypt($player_id . $password))));
 	}
 }
