@@ -3,11 +3,11 @@ class Player extends AppModel {
 	public $useTable = 'player';
 	public $data;
 
-	public function checkPlayer($input) {
-		$find_res = $this->find('first', array('conditions' => array('Player.chek_key' => $input)));
-		if (empty($find_res)) { return false; }
+	public function checkPlayer($player_id, $check_key) {
+		$find_res = $this->find('first', array('conditions' => array('Player.id' => $player_id)));
+		if ($check_key === $find_res['Player']['check_key']) { return true; }
 
-		return true;
+		return false;
 	}
 
 	public function checkPass($player_id, $in_password) {
