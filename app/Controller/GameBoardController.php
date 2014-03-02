@@ -1,7 +1,5 @@
 <?php
 
-App::uses('Sanitize');
-
 class GameBoardController extends AppController {
 
 	public $uses = array('Player', 'GameBoard', 'Chessmen');
