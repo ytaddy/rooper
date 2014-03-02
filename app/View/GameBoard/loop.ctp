@@ -1,1 +1,1 @@
-<p><?php ?></p>
+<p><?php echo $player_id; ?></p>

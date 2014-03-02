@@ -32,6 +32,22 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public function beforeFilter() {
-		var_dump('before');
+		if (isset($this->request->data['player_id'])
+			&& isset($this->request->data['password'])) {
+			if (! $this->Player->checkPass($this->request->data['player_id'], $this->request->data['password'])) {
+				return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
+			} else {
+				$this->Player->updateCheckKey($this->request->data['player_id'], $this->request->data['password']);
+			}
+		} else if (isset($this->request->data['player_id'])
+					&& isset($this->request->data['check_key'])) {
+			if (! $this->Player->checkPlayer($this->request->data['player_id'], $this->request->data['check_key'])) {
+				return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
+			}
+		} else {
+			return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
+		}
+
+		$this->player_id = $this->request->data['player_id'];
 	}
 }
