@@ -1,5 +1,6 @@
 <?php
 class Player extends AppModel {
+	public $uses = array('Sanitize');
 	public $useTable = 'player';
 	public $data;
 
@@ -18,6 +19,6 @@ class Player extends AppModel {
 	}
 
 	public function updateCheckKey($player_id, $password) {
-		$this->query("update ytaddy_rooper.player set check_key = '" . mysqli_real_escape_string(crypt($player_id . $password)) . "' where player_id = '$player_id'");
+		$this->query("update ytaddy_rooper.player set check_key = '" . $this->Sanitize->escape(crypt($player_id . $password), 'ytaddy_rooper') . "' where player_id = '$player_id'");
 	}
 }
