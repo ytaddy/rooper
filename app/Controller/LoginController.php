@@ -3,7 +3,7 @@ class LoginController extends AppController {
 
 	public $uses = array('Player');
 
-	function beforeFilter() {
+	public function beforeFilter() {
 		var_dump('hoge');
 	}
 
