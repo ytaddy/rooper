@@ -39,7 +39,7 @@ class AppController extends Controller {
 			if (! $this->Player->checkPass($this->request->data['player_id'], $this->request->data['password'])) {
 				return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
 			} else {
-				$this->Player->updateCheckKey($this->request->data['player_id'], $this->request->data['password']);
+				$this->check_key = $this->Player->updateCheckKey($this->request->data['player_id'], $this->request->data['password']);
 			}
 		} else if (isset($this->request->data['player_id'])
 					&& isset($this->request->data['check_key'])) {
@@ -51,6 +51,5 @@ class AppController extends Controller {
 		}
 
 		$this->player_id = $this->request->data['player_id'];
-		$this->check_key = isset($this->request->data['check_key']) ? $this->request->data['check_key'] : '';
 	}
 }
