@@ -19,6 +19,6 @@ class Player extends AppModel {
 	}
 
 	public function updateCheckKey($player_id, $password) {
-		$this->query("update ytaddy_rooper.player set check_key = '" . $this->Sanitize->escape(crypt($player_id . $password), 'ytaddy_rooper') . "' where player_id = '$player_id'");
+		$this->query("update ytaddy_rooper.player set check_key = '" . Sanitize::escape(crypt($player_id . $password), 'ytaddy_rooper') . "' where player_id = '$player_id'");
 	}
 }
