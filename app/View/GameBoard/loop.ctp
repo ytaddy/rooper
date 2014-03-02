@@ -1,1 +1,1 @@
-<p><?php var_dump($hoge); ?></p>
+<p><?php ?></p>
