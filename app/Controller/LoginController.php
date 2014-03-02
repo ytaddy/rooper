@@ -8,6 +8,6 @@ class LoginController extends AppController {
 		$password = $this->reques->params['data']['password'];
 		$res = $this->Player->checkPass($player_id, $password);
 
-		var_dump($player_id);var_dump($res);
+		var_dump($player_id);var_dump($this->request->params);
 	}
 }
