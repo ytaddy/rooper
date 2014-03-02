@@ -4,8 +4,9 @@ class Player extends AppModel {
 	public $data;
 
 	public function checkPass($player_id, $in_password) {
-		$player_data = $this->find('first', array('conditions' => array('Player.player_id' => $player_id)));
-		var_dump($player_data);
+		$res = $this->find('first', array('conditions' => array('Player.player_id' => $player_id)));
+		if (empty($res)) { return false; }
+		$player_data = $res['Player'];
 		return ($in_password === $player_data['password']) ? true : false;
 	}
 }
