@@ -5,6 +5,7 @@ class Player extends AppModel {
 
 	public function checkPlayer($player_id, $check_key) {
 		$find_res = $this->find('first', array('conditions' => array('Player.id' => $player_id)));
+		var_dump($check_key);var_dump($find_res['Player']['check_key']);
 		if ($check_key === $find_res['Player']['check_key']) { return true; }
 
 		return false;

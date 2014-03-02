@@ -44,7 +44,7 @@ class AppController extends Controller {
 		} else if (isset($this->request->data['player_id'])
 					&& isset($this->request->data['check_key'])) {
 			if (! $this->Player->checkPlayer($this->request->data['player_id'], $this->request->data['check_key'])) {
-				return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
+			//return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
 			}
 		} else {
 			return $this->redirect(array('controller' => 'Login', 'action' => 'index'));
