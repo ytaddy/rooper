@@ -10,5 +10,6 @@ class GameBoardController extends AppController {
 		$res = $this->GameBoard->find('first',array('conditions' => array('GameBoard.id' => 1)));
 
 		$this->set('player_id', $this->player_id);
+		$this->set('check_key', $this->check_key);
 	}
 }

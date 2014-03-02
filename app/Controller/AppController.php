@@ -51,5 +51,6 @@ class AppController extends Controller {
 		}
 
 		$this->player_id = $this->request->data['player_id'];
+		$this->check_key = isset($this->request->data['check_key']) ? $this->request->data['check_key'] : '';
 	}
 }
